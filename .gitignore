@@ -1,0 +1,20 @@
+# build output
+/build/
+/build-debug/
+*.o
+*.d
+
+# experiment output
+/results/
+
+# solver side files
+*.lp
+*.mps
+*.sol
+gurobi.log
+
+# editors
+.vscode/
+.idea/
+*.swp
+.DS_Store

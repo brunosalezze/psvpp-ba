@@ -1,0 +1,19 @@
+# Style of the code base (checked with clang-format 23).
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 120
+BreakBeforeBraces: Linux
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AlignTrailingComments: true
+AlignConsecutiveMacros: true
+IndentCaseLabels: false
+PointerAlignment: Right
+SortIncludes: false
+# The allocation macros take a type: without their expansion `T, a * b` is read as a declaration.
+Macros:
+  - "XMALLOC_ARRAY(T, n)=((T *)xmalloc(n))"
+  - "XCALLOC_ARRAY(T, n)=((T *)xcalloc(n))"

@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "psvpp-ba: exact and heuristic algorithms for the PSVPP-BA"
+type: software
+version: 1.0.0
+license: GPL-3.0-or-later
+authors:
+  - family-names: Vieira
+    given-names: Bruno S.
+  - family-names: Ribeiro
+    given-names: Glaydston M.
+  - family-names: Bahiense
+    given-names: Laura
+  - family-names: Cruz
+    given-names: Roberto
+  - family-names: Mendes
+    given-names: André B.
+  - family-names: Laporte
+    given-names: Gilbert
+preferred-citation:
+  type: article
+  title: "Exact and heuristic algorithms for the fleet composition and periodic routing problem of offshore supply vessels with berth allocation decisions"
+  authors:
+    - family-names: Vieira
+      given-names: Bruno S.
+    - family-names: Ribeiro
+      given-names: Glaydston M.
+    - family-names: Bahiense
+      given-names: Laura
+    - family-names: Cruz
+      given-names: Roberto
+    - family-names: Mendes
+      given-names: André B.
+    - family-names: Laporte
+      given-names: Gilbert
+  journal: "European Journal of Operational Research"
+  volume: 295
+  issue: 3
+  start: 908
+  end: 923
+  year: 2021
+  month: 12
+  doi: "10.1016/j.ejor.2021.03.022"

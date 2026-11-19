@@ -1,0 +1,26 @@
+# Builds the program without Gurobi (no licence on CI runners) and runs the tests.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        cc: [gcc-13, gcc-14]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install compiler
+        run: sudo apt-get update && sudo apt-get install -y ${{ matrix.cc }}
+      - name: Build
+        run: make CC=${{ matrix.cc }} GUROBI=0
+      - name: Test
+        run: make CC=${{ matrix.cc }} GUROBI=0 test
+      - name: Sanitizers
+        run: |
+          make CC=${{ matrix.cc }} GUROBI=0 debug
+          build-debug/psvpp-ba alns --starts 3 --iterations 3000 instances/p30-2-1 > /dev/null
