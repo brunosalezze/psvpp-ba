@@ -8,9 +8,8 @@ The 30 instances used in the computational experiments of
 > European Journal of Operational Research 295(3):908–923, 2021.
 > [doi:10.1016/j.ejor.2021.03.022](https://doi.org/10.1016/j.ejor.2021.03.022)
 
-The file format and the naming scheme (`p<N>-<B>-<C>`: `N` installations, `B`
-berths, `C` clusters) are described in
-[docs/instance-format.md](../docs/instance-format.md).
+The naming scheme is `p<N>-<B>-<C>`: `N` installations, `B`
+berths, `C` clusters.
 
 ## Origin
 

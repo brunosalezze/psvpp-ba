@@ -201,12 +201,13 @@ if ! command -v python3 >/dev/null 2>&1; then
     printf '   (python3 not found: skipping the validator)\n'
 else
     for inst in "${instances[@]}"; do
-        # the heuristic does not restrict a voyage to one cluster (see the note in
-        # src/common/instance.h: only the voyage enumeration of the exact models does),
-        # so a plan of `alns` on a clustered instance is not a plan of the model.
+        # the heuristic was never designed for clustered instances: it does not
+        # restrict a voyage to one cluster (only the voyage enumeration of the
+        # exact models does, see the note in src/common/instance.h), so plans on
+        # clustered instances are outside the validator's model and not checked.
         clusters=$(sed -n 's/.* \([0-9][0-9]*\) cluster.*/\1/p' "$tmp/info-$inst")
         if [ "${clusters:-1}" -gt 1 ]; then
-            printf '   (%s: %s clusters, the heuristic ignores them: not validated)\n' "$inst" "$clusters"
+            printf "   (%s: %s clusters, outside the heuristic's design: not validated)\n" "$inst" "$clusters"
             continue
         fi
         expect_ok "check_solution.py $inst" "check-$inst" python3 scripts/check_solution.py \

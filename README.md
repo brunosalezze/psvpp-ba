@@ -128,7 +128,7 @@ killed by a memory or time limit still leaves its best plan and bound.
 sets the threads of the main Gurobi model (default: all cores),
 `--subproblem-threads` those of the small models that the branch-and-cut
 falls back on when its scheduling algorithms cannot settle an incumbent
-(default 1; see [docs/algorithms.md](docs/algorithms.md)), and
+(default 1), and
 `--max-route-size` the largest number of installations per voyage (default 8,
 as in the paper; the heuristic follows the same option). `--gap` sets the gap at
 which the exact methods stop (default 0.01 %, Gurobi's; the original branch-and-cut
@@ -153,8 +153,7 @@ The script writes one CSV per instance and a `summary.txt` under `results/`.
 ## Instances
 
 The 30 instances of the paper are in [`instances/`](instances) (licensed
-under CC BY 4.0; [instances/README.md](instances/README.md) lists their origin);
-the file format is described in [docs/instance-format.md](docs/instance-format.md).
+under CC BY 4.0; [instances/README.md](instances/README.md) lists their origin).
 `p<N>-<B>-<C>` has `N` installations, `B` berths and `C` clusters
 (`C = 1`: non-clustered).
 
